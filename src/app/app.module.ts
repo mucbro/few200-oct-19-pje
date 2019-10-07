@@ -7,6 +7,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoListEntryComponent } from './components/todo-list-entry/todo-list-entry.component';
 import { TodoListListComponent } from './components/todo-list-list/todo-list-list.component';
+import { TodoDataService } from './service/todo.data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { TodoListListComponent } from './components/todo-list-list/todo-list-lis
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TodoDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
