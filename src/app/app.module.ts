@@ -15,6 +15,9 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
 import { CounterByComponent } from './components/counter-by/counter-by.component';
+import { CounterEffects } from './effects/counter.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { BooksModule } from './features/books/books.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,10 @@ import { CounterByComponent } from './components/counter-by/counter-by.component
   ],
   imports: [
     BrowserModule,
+    BooksModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([CounterEffects]),
     StoreDevtoolsModule.instrument()
   ],
   providers: [
