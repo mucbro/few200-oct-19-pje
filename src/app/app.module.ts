@@ -10,6 +10,11 @@ import { TodoListListComponent } from './components/todo-list-list/todo-list-lis
 import { TodoDataService } from './service/todo.data.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './reducers';
+import { CounterByComponent } from './components/counter-by/counter-by.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +24,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TodoListEntryComponent,
     TodoListListComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    CounterComponent,
+    CounterByComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [
     TodoDataService
