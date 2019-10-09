@@ -18,6 +18,7 @@ import { CounterByComponent } from './components/counter-by/counter-by.component
 import { CounterEffects } from './effects/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { BooksModule } from './features/books/books.module';
+import { ErrorDisplayComponent } from './components/error-display/error-display.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BooksModule } from './features/books/books.module';
     FooterComponent,
     DashboardComponent,
     CounterComponent,
-    CounterByComponent
+    CounterByComponent,
+    ErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
