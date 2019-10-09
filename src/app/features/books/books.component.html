@@ -1,6 +1,14 @@
 <header class="page-header">
   <h3>My Books</h3>
 </header>
-<app-entry></app-entry>
-<app-list [model]="books$ | async"></app-list>
-<app-sorter></app-sorter>
+<div *ngIf="loaded$ | async">
+  <app-entry></app-entry>
+  <app-sorter></app-sorter>
+  <app-list [model]="books$ | async"></app-list>
+</div>
+
+<div class="alert alert-info"
+     *ngIf="(loaded$ | async) === false">
+  <h3>Your Books are loading. Chill.</h3>
+  <img src="https://media.giphy.com/media/VOq7iem25Z94Y/giphy.gif">
+</div>
