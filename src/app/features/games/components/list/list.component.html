@@ -1,14 +1,7 @@
-<div class="card">
+<div class="card"
+     *ngFor="let game of model">
   <div class="card-body">
-    <h5 class="card-title">Super Mario Odyssey</h5>
-    <p class="card-text">Nintendo EAD</p>
-    <p class="card-text">Nintendo Switch</p>
+    <h5 class="card-title">{{ game.title }}</h5>
+    <p class="card-text">Published By: {{ game.publisher }}</p>
+    <p class="card-text">{{ game.platform }}</p>
   </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Spider-Man</h5>
-    <p class="card-text">Insomniac Games</p>
-    <p class="card-text">Playstation 4</p>
-  </div>
-</div>

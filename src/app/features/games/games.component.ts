@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GameListModel } from './models';
+import { GameFeatureState, selectGameListModel } from './reducers';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-games',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamesComponent implements OnInit {
 
-  constructor() { }
+
+  games$: Observable<GameListModel[]>;
+  constructor(private store: Store<GameFeatureState>) { }
 
   ngOnInit() {
+    this.games$ = this.store.select(selectGameListModel);
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GameListModel } from '../../models';
 
 @Component({
   selector: 'app-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+
+  @Input() model: GameListModel[] = [];
 
   constructor() { }
 

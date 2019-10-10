@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { GamesComponent } from './games.component';
 import { ListComponent } from './components/list/list.component';
 import { EntryComponent } from './components/entry/entry.component';
+import { StoreModule } from '@ngrx/store';
+import { featureName, reducers } from './reducers';
 
 
 
@@ -11,7 +13,8 @@ import { EntryComponent } from './components/entry/entry.component';
   // allow app module to see me
   exports: [GamesComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    StoreModule.forFeature(featureName, reducers)
   ]
 })
 export class GamesModule { }
