@@ -19,6 +19,7 @@ import { CounterEffects } from './effects/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { BooksModule } from './features/books/books.module';
 import { ErrorDisplayComponent } from './components/error-display/error-display.component';
+import { GamesModule } from './features/games/games.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ErrorDisplayComponent } from './components/error-display/error-display.
   imports: [
     BrowserModule,
     BooksModule,
+    GamesModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([CounterEffects]),
