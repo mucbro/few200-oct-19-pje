@@ -1,4 +1,4 @@
-export interface GameListModel {
+export interface GameListItem {
   id: string;
   title: string;
   publisher: string;

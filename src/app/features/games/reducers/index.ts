@@ -1,6 +1,6 @@
 import * as fromList from './list.reducer';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { GameListModel } from '../models';
+import { GameListItem } from '../models';
 export const featureName = 'gameFeature';
 
 export interface GameFeatureState {
@@ -21,7 +21,7 @@ const { selectAll: selectGameArray } = fromList.adapter.getSelectors(selectGameL
 // 4. For our components
 
 //  -- Need an GameListItemModel[] for the list.
-export const selectGameListModel = createSelector(
+export const selectGameListItem = createSelector(
   selectGameArray,
-  (games) => games as GameListModel[]
+  (games) => games as GameListItem[]
 );

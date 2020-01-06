@@ -2,19 +2,29 @@
   <div class="form-group">
     <label for="title">Title</label>
     <input class="form-control"
+    #name
            name="title">
   </div>
   <div class="form-group">
     <label for="publisher">Publisher</label>
     <input class="form-control"
+    #publisher
            name="publisher">
   </div>
   <div class="form-group">
     <label for="platform">Platform</label>
-    <input class="form-control"
+    <select class="form-control"
+          #plat
            name="platform">
+           <option value="pc">PC</option>
+           <option value="xbone">Xbox One</option>
+           <option value="ps4">Playstation 4</option>
+           <option value="ns">Nintendo Switch</option>
+           <option value="3ds">Nintendo 3DS</option>
+           </select>
   </div>
   <input type="button"
+        (click)="addItem(name,publisher,plat)"
          class="btn btn-primary"
          value="Add">
 </div>

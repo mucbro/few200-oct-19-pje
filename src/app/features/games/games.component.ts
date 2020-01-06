@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GameListModel } from './models';
-import { GameFeatureState, selectGameListModel } from './reducers';
+import { GameListItem } from './models';
+import { GameFeatureState, selectGameListItem } from './reducers';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -12,11 +12,11 @@ import { Store } from '@ngrx/store';
 export class GamesComponent implements OnInit {
 
 
-  games$: Observable<GameListModel[]>;
+  games$: Observable<GameListItem[]>;
   constructor(private store: Store<GameFeatureState>) { }
 
   ngOnInit() {
-    this.games$ = this.store.select(selectGameListModel);
+    this.games$ = this.store.select(selectGameListItem);
   }
 
 }

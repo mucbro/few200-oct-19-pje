@@ -1,1 +1,1 @@
-export * from './game-list-model';
+export * from './game-list-item';

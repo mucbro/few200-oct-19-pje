@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameListModel } from '../../models';
+import { GameListItem } from '../../models';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +8,7 @@ import { GameListModel } from '../../models';
 })
 export class ListComponent implements OnInit {
 
-  @Input() model: GameListModel[] = [];
+  @Input() model: GameListItem[] = [];
 
   constructor() { }
 
