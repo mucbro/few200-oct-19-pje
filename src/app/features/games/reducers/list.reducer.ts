@@ -1,5 +1,6 @@
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, Action } from '@ngrx/store';
+import { createReducer, Action, on } from '@ngrx/store';
+import * as actions from '../actions/list.actions';
 
 export interface GameEntity {
   id: string;
@@ -32,7 +33,8 @@ const initialState: GameState = {
   },
 };
 const reducerFunction = createReducer(
-  initialState
+  initialState,
+  on(actions.gameAdded, (state, action) => adapter.addOne(action.entity, state))
 );
 
 export function reducer(state: GameState = initialState, action: Action) {

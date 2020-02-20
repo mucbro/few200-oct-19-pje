@@ -11,10 +11,10 @@ import { featureName, reducers } from './reducers';
 @NgModule({
   declarations: [GamesComponent, ListComponent, EntryComponent],
   // allow app module to see me
-  exports: [GamesComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(featureName, reducers)
-  ]
+  ],
+  exports: [GamesComponent]
 })
 export class GamesModule { }

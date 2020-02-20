@@ -1,4 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GameFeatureState } from '../../reducers';
+import { gameAdded } from '../../actions/list.actions';
 
 @Component({
   selector: 'app-entry',
@@ -7,18 +10,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class EntryComponent implements OnInit {
 
-  @Output() addedItem = new EventEmitter<string>();
-  title = 'Your VideoGames';
-  constructor() { }
+  constructor(private store: Store<GameFeatureState>) { }
 
   ngOnInit() {
   }
 
-  addItem(item: HTMLInputElement) {
-    console.log(item.value);
-    this.addedItem.emit(item.value);
-    item.value = '';
-    item.focus();
+  addItem(titleEl: HTMLInputElement, publisherEl: HTMLInputElement, platformEl: HTMLInputElement) {
+    const title = titleEl.value;
+    const publisher = publisherEl.value;
+    const platform = platformEl.value;
+    this.store.dispatch(gameAdded({ title, publisher, platform}));
+    titleEl.value = '';
+    publisherEl.value = '';
+    platformEl.value = '';
+    titleEl.focus();
   }
 
 }
